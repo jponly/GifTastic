@@ -7,60 +7,97 @@
     <title>gifTastic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid"></div>
-    <div class="row">
-        <div class="col-12">
-            <h1 id="Simpsons_giphy">SIMPSONS GIF'S</h1>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-12">
-            <div id="buttons">
-                <button data-search="homer simpson">
-                    Homer
-                </button>
-                <button data-search="marge simpson">
-                    Marge
-                </button>
-                <button data-search="bart simpson">
-                    Bart
-                </button>
-                <button data-person="lisa simpson">
-                    Lisa
-                </button>
-                <button data-person="maggie simpson">
-                    Maggie
-                </button>
+    <div class="container-fluid">
 
-                
-                <div id="simpsons_view"></div>
-            </div>
-        </div>
-        <br>
         <div class="row">
             <div class="col-12">
-                <form id="simpson-form">
-                    <label for="simpson-input">Search for a Simpsons Character</label>
-                    <input type="text" id="simpson-input">
-                    <br>
-
-                    <!-- This button will trigger our AJAX call -->
-                    <input id="add-simpson" type="submit" value="Character Search">
-                </form>
+                    <div id="simpsons_view">
+                            <button id="simpsons_character"></button>
+                        </div>
+                    <form id="simpson-form">
+                            <br> 
+                            <label for="simpson-input">Search for a Simpsons Character</label>
+                            <input type="text" id="simpson-input">
+                            <br>
+                             
+                         <input id="add-simpson" type="submit" value="Character Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+           
             </div>
         </div>
     </div>
+    
 
 </body>
 
 </html>
+
+
+
+<!-- <form id="simpson-form">
+        <label for="simpson-input">Search for a Simpsons Character</label>
+        <input type="text" id="simpson-input">
+        <br>
+
+        This button will trigger our AJAX call -->
+<!-- <input id="add-simpson" type="submit" value="Character Search">
+    </form> -->
+
+
+
+
+
+
+
+
+
+
+<!-- GO AWAY -->
+
+<!-- <div class="col-12">
+        <div id="buttons">
+            <button class="fixed" data-person="homer simpson">
+                Homer
+            </button>
+            <button class="fixed" data-person="marge simpson">
+                Marge
+            </button>
+            <button class="fixed" data-person="bart simpson">
+                Bart
+            </button>
+            <button class="fixed" data-person="lisa simpson">
+                Lisa
+            </button>
+            <button class="" data-person="maggie simpson">
+                Maggie
+            </button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <form id="simpson-form">
+                <label for="simpson-input">Search for a Simpsons Character</label>
+                <input type="text" id="simpson-input">
+                <br>
+                  This button will trigger our AJAX call 
+             <input id="add-simpson" type="submit" value="Character Search">
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div id="simpsons_view"></div> -->
