@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
   var simpsons = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
@@ -19,9 +17,7 @@ $(document).ready(function () {
   renderButtons();
 
   $("#simpsons_view").on("click", "button", function (event) {
-    //  event.preventDefault();
     var simpson = $(this).text().trim();
-    // simpsons.push(simpson);
     console.log(simpson);
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=aoSPXoHUbFoGrtwGZUsQSBL735BHRriI&q=" + simpson + "&limit=10";
@@ -44,79 +40,68 @@ $(document).ready(function () {
           gifDiv.append(p);
           gifDiv.append(personImage);
           $("body").append(gifDiv);
+          personImage.attr("src", response.data[i].images.fixed_width_still.url);
+          personImage.attr("data-still", response.data[i].images.fixed_width_still.url);
+          personImage.attr("data-animate", response.data[i].images.fixed_width.url);
+          personImage.addClass("gif")
+          personImage.attr("data-state", "still");
 
-        }
+          $(".gif").on("click", function () {
+            var state = $(this).attr("data-state");
+            if (state === "still") {
+              $(this).attr("src", $(this).attr("data-animate"));
+              $(this).attr("data-state", "animate");
+            } else {
+              $(this).attr("src", $(this).attr("data-still"));
+              $(this).attr("data-state", "still");
+            }
+         });
+
+          }
       }
-    });
+      });
   });
 
-  $("#add-simpson").on("click", function(event) {
-    // event.preventDefault();
+  $("#add-simpson").on("click", function (event) {
+    
     var simpson = $("#simpson-input").val().trim();
     simpsons.push(simpson);
     console.log(simpsons);
     renderButtons();
   });
 
+
+
 }); // document ready
 
 
 
+// animalImage.attr("src", response.data[i].images.fixed_width_still.url);
+// animalImage.attr("data-still", response.data[i].images.fixed_width_still.url);
+// animalImage.attr("data-animate", response.data[i].images.fixed_width.url);
+// animalImage.addClass("gif")
+// animalImage.attr("data-state", "still");
 
+// $(".gif").on("click", function() {
 
+//   var state = $(this).attr("data-state");
 
-
-// var simpsons = ["Homer","Marge","Bart","Lisa","Maggie"];
-
-
-//   function renderButtons() {
-//     $("#simpsons_view").empty();
-
-//     for (var i = 0; i < simpsons.length; i++) {
-//       var a = $('<button>');
-//       a.addClass("simpson");
-//       a.attr("data-name", simpsons[i]);
-//       a.text(simpsons[i]);
-//       $("#simpsons_view").append(a);
-
-//     }
-
+//   if (state === "still") {
+//     $(this).attr("src", $(this).attr("data-animate"));
+//     $(this).attr("data-state", "animate");
+//   } else {
+//     $(this).attr("src", $(this).attr("data-still"));
+//     $(this).attr("data-state", "still");
 //   }
-
-//   $("#add-simpson").on("click", function (event) {
-//     event.preventDefault();
-//     var simpson = $("#simpson-input").val().trim();
-//     simpsons.push(simpson);
-
-//     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=aoSPXoHUbFoGrtwGZUsQSBL735BHRriI&tag=simpsons&limit=10";
-
-
-//     $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     })
-
-
-//       .then(function (response) {
-
-//         var imageUrl = response.data.image_original_url;
-//         var simpImage = $("<img>");
-//         simpImage.attr("src", imageUrl);
-//         simpImage.attr("alt", "simpson image");
-//         $("#simpsons_view").append(simpImage);
+// });
 
 
 
 
-//       });
 
 
 
-//     renderButtons();
 
-//   });
-
-//     renderButtons();
 
 
 
