@@ -75,25 +75,7 @@ $(document).ready(function () {
 }); // document ready
 
 
-
-// animalImage.attr("src", response.data[i].images.fixed_width_still.url);
-// animalImage.attr("data-still", response.data[i].images.fixed_width_still.url);
-// animalImage.attr("data-animate", response.data[i].images.fixed_width.url);
-// animalImage.addClass("gif")
-// animalImage.attr("data-state", "still");
-
-// $(".gif").on("click", function() {
-
-//   var state = $(this).attr("data-state");
-
-//   if (state === "still") {
-//     $(this).attr("src", $(this).attr("data-animate"));
-//     $(this).attr("data-state", "animate");
-//   } else {
-//     $(this).attr("src", $(this).attr("data-still"));
-//     $(this).attr("data-state", "still");
-//   }
-// });
+// Jquery for creating buttons from text that display gif's //
 
 
 
