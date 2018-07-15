@@ -19,9 +19,11 @@ color: rgb(219, 10, 191);
 }
 
 label {
+    margin-left:60%;
     color: rgb(219, 10, 191);
 }
 
-.col-12 {
-    padding-left: 60%;
+#add-simpson{
+    margin-left:60%;
+
 }
